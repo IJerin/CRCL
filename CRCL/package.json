@@ -1,0 +1,101 @@
+{
+  "name": "circle",
+  "version": "0.10.0",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "ios-open": "open ios/*.xcodeproj",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
+    "lint": "eslint src test *.js",
+    "test": "jest",
+    "remotedev": "remotedev-debugger --injectserver",
+    "postinstall": "npm run remotedev && rndebugger-open",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --write",
+      "lint --fix",
+      "git add"
+    ]
+  },
+  "remotedev": {
+    "hostname": "localhost",
+    "port": 5678
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "binaryen": "^46.0.0",
+    "firebase": "^4.6.2",
+    "immutable": "^3.7.6",
+    "install": "^0.11.0",
+    "lodash": "^4.3.0",
+    "prop-types": "^15.6.0",
+    "react": "16.3.1",
+    "react-native": "0.54.4",
+    "react-native-app-settings": "^2.0.0",
+    "react-native-auto-scroll": "0.0.1",
+    "react-native-background-timer": "^2.0.1",
+    "react-native-carousel-pager": "^1.4.2",
+    "react-native-easy-grid": "^0.1.15",
+    "react-native-elements": "^0.19.1",
+    "react-native-fbsdk": "^0.6.3",
+    "react-native-fetch-blob": "^0.10.8",
+    "react-native-geocoding": "^0.2.0",
+    "react-native-image-picker": "^0.26.7",
+    "react-native-keyboard-aware-scroll-view": "^0.5.0",
+    "react-native-maps": "^0.21.0",
+    "react-native-mauron85-background-geolocation": "^0.5.0-alpha.31",
+    "react-native-modal": "^4.1.1",
+    "react-native-onesignal": "^3.1.4",
+    "react-native-parallax-header": "^1.0.6",
+    "react-native-parallax-scroll-view": "^0.21.0",
+    "react-native-parallax-scrollview": "^2.0.0",
+    "react-native-popup-menu": "^0.9.0",
+    "react-native-splash-screen": "^3.0.6",
+    "react-native-swiper": "^1.5.13",
+    "react-native-switch-pro": "^0.4.8",
+    "react-native-vector-icons": "^4.6.0",
+    "react-navigation": "1.0.0-beta.27",
+    "react-redux": "^5.0.3",
+    "redux": "^3.3.1",
+    "redux-thunk": "^2.0.1",
+    "toggle-switch-react-native": "^0.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-remove-console": "^6.8.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-react-native": "4.0.0",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.4.0",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^7.0.4",
+    "prettier": "^1.11.1",
+    "pretty-quick": "^1.4.1",
+    "react-native-debugger-open": "^0.3.17",
+    "react-test-renderer": "16.0.0",
+    "remote-redux-devtools": "^0.5.4",
+    "remotedev-rn-debugger": "^0.8.3"
+  },
+  "jest": {
+    "preset": "react-native",
+    "setupTestFrameworkScriptFile": "<rootDir>/jest.js",
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|react-navigation)/"
+    ]
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts"
+    ]
+  }
+}
